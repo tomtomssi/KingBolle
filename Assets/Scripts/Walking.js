@@ -7,6 +7,6 @@ function Start () {
 }
 
 function Update () {
-	anim.setFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+	anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 	transform.position.x += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 }
