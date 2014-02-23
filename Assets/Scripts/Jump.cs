@@ -1,73 +1,55 @@
 ﻿using UnityEngine;
+using System.Collections;
 
-
-
-[RequireComponent(typeof(CharacterController))]
-
-
-
-public class Jump : MonoBehaviour
-	
-{
-	
-	public float speed = 6.0f;
-	
-	public float jumpSpeed = 8.0f;
-	
-	public float gravity = 20.0f;
-	
-	
-	
-	private Vector2 moveDirection = Vector2.zero;
-	
+public class Jump : MonoBehaviour {
+	Vector2 myPos;
+	Vector2 groundCheckPos;
+	Vector2 a;
 	private bool grounded = false;
-	
-	
-	
-	void FixedUpdate() 
-		
-	{
-		
-		if (grounded) 
-			
-		{
-			
-			// We are grounded, so recalculate movedirection directly from axes
-			
-			moveDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-			
-			moveDirection = transform.TransformDirection(moveDirection);
-			
-			moveDirection *= speed;
-			
-			
-			
-			if (Input.GetButton ("Jump"))  moveDirection.y = jumpSpeed;
-			
-		}
-		
-		
-		
-		// Apply gravity
-		
-		moveDirection.y -= gravity * Time.deltaTime;
-		
-		
-		
-		// Move the controller
-		
-		CharacterController controller = (CharacterController)GetComponent(typeof(CharacterController));
-		
-		CollisionFlags flags = controller.Move(moveDirection * Time.deltaTime);
-		
-		grounded = (flags & CollisionFlags.CollidedBelow) != 0;
-		
+	private bool jump = false;
+	public float maxSpeed = 5f;
+	public float moveForce = 365f;
+	public float jumpForce = 1000f;
+
+	// Use this for initialization
+	void Start () {
+
 	}
 	
-	
-	
-	
-	
-	
-	
+	// Update is called once per frame
+	void Update () {
+		a = GameObject.Find ("groundCheck").transform.position;
+		myPos = new Vector2 (transform.position.x, transform.position.y);
+		groundCheckPos = new Vector2 (a.x, a.y);
+		grounded = isGrounded ();
+		if (Input.GetButtonDown ("Jump") && grounded)
+						jump = true;
+	}
+
+	public bool isGrounded(){
+			bool result =  Physics2D.Linecast(myPos , groundCheckPos , 1 << LayerMask.NameToLayer("Ground"));
+
+			return result;
+		}
+
+	void FixedUpdate(){
+		float h = Input.GetAxis ("Horizontal");
+		if(h * rigidbody2D.velocity.x < maxSpeed)
+			// ... add a force to the player.
+			rigidbody2D.AddForce(Vector2.right * h * moveForce);
+		
+		// If the player's horizontal velocity is greater than the maxSpeed...
+		if(Mathf.Abs(rigidbody2D.velocity.x) > moveForce)
+			// ... set the player's velocity to the maxSpeed in the x axis.
+			rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
+
+		if (jump) {
+						// Add a vertical force to the player.
+						rigidbody2D.AddForce (new Vector2 (0f, jumpForce));
+			
+						// Make sure the player can't jump again until the jump conditions from Update are satisfied.
+						jump = false;
+				}
+
+	}
 }

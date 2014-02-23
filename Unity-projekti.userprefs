@@ -1,9 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Jump.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpawnRocks.cs">
     <Files>
-      <File FileName="Assets\Scripts\Walking.js" Line="12" Column="2" />
-      <File FileName="Assets\Scripts\Jump.cs" Line="59" Column="96" />
+      <File FileName="Assets\Scripts\SpawnRocks.cs" Line="37" Column="151" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

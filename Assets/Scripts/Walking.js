@@ -2,7 +2,6 @@
 var speed : float = 5;
 var anim : Animator;
 function Start () {
-	
 	anim = gameObject.GetComponent(Animator);
 }
 

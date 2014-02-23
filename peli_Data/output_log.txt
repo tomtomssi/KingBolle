@@ -7,9 +7,9 @@ Direct3D:
     VRAM:     1119 MB (via DXGI)
     Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
 Begin MonoManager ReloadAssembly
-Platform assembly: K:\Unity-projekti\peli_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading K:\Unity-projekti\peli_Data\Managed\UnityEngine.dll into Unity Child Domain
-- Completed reload, in  0.167 seconds
+Platform assembly: C:\Users\r0sota00\Desktop\Unity-projekti\peli_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\r0sota00\Desktop\Unity-projekti\peli_Data\Managed\UnityEngine.dll into Unity Child Domain
+- Completed reload, in  0.049 seconds
 desktop: 1680x1050 59Hz; virtual: 1680x1050 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.

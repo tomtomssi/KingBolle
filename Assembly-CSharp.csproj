@@ -39,14 +39,27 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Programming/Unity/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Programming/Unity/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Jump.cs" />
+     <Compile Include="Assets\Scripts\MainMusic.cs" />
+     <Compile Include="Assets\Scripts\MoveMonster.cs" />
+     <Compile Include="Assets\Scripts\Pausing.cs" />
+     <Compile Include="Assets\Scripts\PlayerDeath.cs" />
+     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\Points.cs" />
+     <Compile Include="Assets\Scripts\RockCollision.cs" />
+     <Compile Include="Assets\Scripts\Shooting.cs" />
+     <Compile Include="Assets\Scripts\SpawnRocks.cs" />
+     <Compile Include="Assets\Scripts\bullet.cs" />
+     <Compile Include="Assets\Scripts\cameraFollow.cs" />
+     <Compile Include="Assets\Scripts\killExplosion.cs" />
+     <Compile Include="Assets\Scripts\spawnMonsters.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
