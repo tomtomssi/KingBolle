@@ -3,9 +3,13 @@ using System.Collections;
 
 public class PlayerDeath : MonoBehaviour {
 	private bool isDead = false;
+	private GameObject GameFlowManager;
+	GameObject points;
+
 	// Use this for initialization
 	void Start () {
-
+		GameFlowManager = GameObject.Find ("GameFlowManager");
+		points = GameObject.FindGameObjectWithTag ("ScoreBoard");
 	}
 	
 	// Update is called once per frame
@@ -31,7 +35,8 @@ public class PlayerDeath : MonoBehaviour {
 	
 	public IEnumerator restartLevel(){
 		yield return new WaitForSeconds(1.3f);
-		Application.LoadLevel (0);
+		GameFlowManager.GetComponent<GameFlowControl>().gameOver(points.GetComponent<Points>().getPoints());
+		//Application.LoadLevel (0);
 	}
 
 }

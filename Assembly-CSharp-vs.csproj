@@ -46,8 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GameFlowControl.cs" />
      <Compile Include="Assets\Scripts\Jump.cs" />
      <Compile Include="Assets\Scripts\MainMusic.cs" />
+     <Compile Include="Assets\Scripts\MenuController.cs" />
+     <Compile Include="Assets\Scripts\MenuItemBehaviour.cs" />
      <Compile Include="Assets\Scripts\MoveMonster.cs" />
      <Compile Include="Assets\Scripts\Pausing.cs" />
      <Compile Include="Assets\Scripts\PlayerDeath.cs" />
@@ -55,11 +58,19 @@
      <Compile Include="Assets\Scripts\Points.cs" />
      <Compile Include="Assets\Scripts\RockCollision.cs" />
      <Compile Include="Assets\Scripts\Shooting.cs" />
+     <Compile Include="Assets\Scripts\ShootingMonster.cs" />
      <Compile Include="Assets\Scripts\SpawnRocks.cs" />
+     <Compile Include="Assets\Scripts\TaustaTatu.cs" />
+     <Compile Include="Assets\Scripts\TreasureChest.cs" />
      <Compile Include="Assets\Scripts\bullet.cs" />
      <Compile Include="Assets\Scripts\cameraFollow.cs" />
+     <Compile Include="Assets\Scripts\iTween.cs" />
      <Compile Include="Assets\Scripts\killExplosion.cs" />
      <Compile Include="Assets\Scripts\spawnMonsters.cs" />
+     <Compile Include="Assets\iTween\Sample\MoveSample.cs" />
+     <Compile Include="Assets\iTween\Sample\RotateSample.cs" />
+     <Compile Include="Assets\iTween\Sample\SampleInfo.cs" />
+     <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

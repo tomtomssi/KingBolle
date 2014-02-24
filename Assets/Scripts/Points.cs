@@ -10,6 +10,10 @@ public class Points : MonoBehaviour {
 	public void setPoints(){
 			score += 100;
 		}
+
+	public int getPoints(){
+		return score;
+	}
 	// Update is called once per frame
 	void Update () {
 		gameObject.guiText.text = "Points: " + score;
